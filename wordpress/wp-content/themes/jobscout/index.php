@@ -11,21 +11,21 @@
  *
  * @package JobScout
  */
-
+//ádasiflish
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		
-        <?php 
+<div id="primary" class="content-area">
+
+    <?php 
         /**
          * Before Posts hook
         */
         do_action( 'jobscout_before_posts_content' );
         ?>
-        
-        <main id="main" class="site-main">
 
-		<?php
+    <main id="main" class="site-main">
+
+        <?php
 		if ( have_posts() ) :
 
 			/* Start the Loop */
@@ -46,17 +46,17 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main><!-- #main -->
-        
-        <?php
+    </main><!-- #main -->
+
+    <?php
         /**
          * After Posts hook
          * @hooked jobscout_navigation - 15
         */
         do_action( 'jobscout_after_posts_content' );
         ?>
-        
-	</div><!-- #primary -->
+
+</div><!-- #primary -->
 
 <?php
 get_sidebar();
