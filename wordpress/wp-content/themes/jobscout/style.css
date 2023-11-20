@@ -1119,21 +1119,21 @@ body.custom-background .site {
 }
 
 a.btn {
+
   display: inline-block;
-  background: #2ace5e;
-  border: 1px solid #2ace5e;
+  background: #ff7f26;
+  border: 1px solid #ff7f26;
   color: #fff;
   font-weight: 700;
-
   font-size: 0.888em;
-  border-radius: 5px;
   padding: 10px 18px;
 }
 
 a.btn:hover,
 a.btn:focus {
   background: none;
-  color: #2ace5e;
+  color: #ff7f26;
+
 }
 
 a.btn:focus {
@@ -2038,7 +2038,8 @@ HEADER T SECTION
 .secondary-nav ul li.current_page_item>a,
 .secondary-nav ul li.current-menu-ancestor>a,
 .secondary-nav ul li.current_page_ancestor>a {
-  color: #2ace5e;
+  
+  border-bottom: 4px solid #ff7f26;
 }
 
 .secondary-nav ul.nav-menu>li:first-child>a {
@@ -2172,7 +2173,7 @@ body.home:not(.banner-enabled) .site-header {
 }
 
 .site-branding .site-title a {
-  color: #2ace5e;
+  color: #000;
 }
 
 .site-branding .site-description {
@@ -2220,7 +2221,17 @@ body.home:not(.banner-enabled) .site-header {
 .main-navigation ul li.current_page_item>a,
 .main-navigation ul li.current-menu-ancestor>a,
 .main-navigation ul li.current_page_ancestor>a {
-  color: #2ace5e;
+
+  border-bottom: 4px solid #ff7f26;
+}
+
+.main-navigation ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 17px;
+  color: #000;
 }
 
 .main-navigation ul li ul {
@@ -2364,41 +2375,20 @@ SITE BANNER SECTION
 .banner-caption .jobscout_job_filters .search_jobs {
   padding: 0;
   display: flex;
-
   overflow: hidden;
 }
 
 .jobscout_job_filters .search_jobs {
   padding: 20px 10px !important;
-
 }
 
 .banner-caption .jobscout_job_filters .search_jobs div.search_keywords {
   width: 453px !important;
-
-
 }
-
-
-
 
 .banner-caption .jobscout_job_filters .search_jobs div.search_location {
   width: 30% !important;
 }
-
-.search_location select {
-  border-left: none !important;
-  background-position: calc(100%-25px) 50% !important;
-}
-
-.search__button select {
-  border-left: none !important;
-  background-position: calc(100%-25px) 50% !important;
-}
-
-
-
-
 
 .banner-caption .jobscout_job_filters .search_jobs div.filter_wide,
 .banner-caption .jobscout_job_filters .search_jobs div.search_categories {
