@@ -2178,6 +2178,7 @@ body.home:not(.banner-enabled) .site-header {
 
 .site-branding .site-title a {
   color: #000;
+  text-decoration: none;
 }
 
 .site-branding .site-description {
