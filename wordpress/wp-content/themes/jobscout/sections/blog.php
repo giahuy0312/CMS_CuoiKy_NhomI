@@ -16,14 +16,34 @@ $ed_blog      = get_theme_mod( 'ed_blog', true );
 $args = array(
     'post_type'           => 'post',
     'post_status'         => 'publish',
-    'posts_per_page'      => 3,
+    'posts_per_page'      => 4,
     'ignore_sticky_posts' => true
 );
 
 $qry = new WP_Query( $args );
 
+?>
+<style>
+    .post {
+        box-shadow: none !important; 
+        border-radius: 0 !important; 
+        background: #fff;
+        padding: 15px;
+    }
+
+    .photo img , .photo svg {
+        width: 160px;
+        height: 160px
+    }
+
+    .post .content-blog {
+        transform: translateY(calc(95px - 50%));
+    }
+</style>
+<?php
+
 if( $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
-<section id="blog-section" class="article-section">
+<section id="blog-section" class="article-section" style="background: #f5f5f7; padding: 70px 0; margin: 0">
 	<div class="container">
         <?php 
             if( $blog_heading ) echo '<h2 class="section-title">' . esc_html( $blog_heading ) . '</h2>';
@@ -36,28 +56,37 @@ if( $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
                 while( $qry->have_posts() ){
                     $qry->the_post(); ?>
                     <article class="post">
-        				<figure class="post-thumbnail">
-                            <a href="<?php the_permalink(); ?>" class="post-thumbnail">
-                            <?php 
-                                if( has_post_thumbnail() ){
-                                    the_post_thumbnail( 'jobscout-blog', array( 'itemprop' => 'image' ) );
-                                }else{ 
-                                    jobscout_fallback_svg_image( 'jobscout-blog' ); 
-                                }                            
-                            ?>                        
-                            </a>
-                        </figure>
-                        <header class="entry-header">
-                            <div class="entry-meta">
+        				<div class="row">
+                            <div class="col-md-5 photo">
+                                <a href="<?php the_permalink(); ?>" class="post-thumbnail">
                                 <?php 
-                                    if( ! $hide_author ) jobscout_posted_by(); 
-                                    if( ! $hide_date ) jobscout_posted_on();
-                                ?> 
+                                    if( has_post_thumbnail() ){
+                                        the_post_thumbnail( 'jobscout-blog', array( 'itemprop' => 'image' ) );
+                                    }else{ 
+                                        jobscout_fallback_svg_image( 'jobscout-blog' ); 
+                                    }                            
+                                ?>                        
+                                </a>
                             </div>
-                            <h3 class="entry-title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            </h3>
-                        </header>
+                            <div class="col-md-7 content-blog">
+                                <a href="<?php the_permalink(); ?>" class="titlebinh">
+                                    <div class="titlebinh"><?php the_title(); ?></div>
+                                </a>
+                                <div class="des-titlebinh" itemprop="text">
+                                    <?php  
+                                        // the_content();
+                                        $content = get_the_content();
+                                        $trimmed_content = substr(strip_tags($content), 0, 117);
+                                        echo $trimmed_content;
+                                    ?>
+                                </div>
+                                <a href="<?php the_permalink(); ?>" class="rm-binh">
+                                    <div class="rm-binh">
+                                        Read More
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
         			</article>			
         			<?php 
                 }
