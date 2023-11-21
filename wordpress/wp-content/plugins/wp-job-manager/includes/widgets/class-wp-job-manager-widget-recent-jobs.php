@@ -122,34 +122,34 @@ class WP_Job_Manager_Widget_Recent_Jobs extends WP_Job_Manager_Widget {
 
 		if ( $jobs->have_posts() ) : ?>
 
-			<?php echo $args['before_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+<?php echo $args['before_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 
-			<?php
+<?php
 			if ( $title ) {
 				echo $args['before_title'] . esc_html( $title ) . $args['after_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			?>
 
-			<ul class="job_listings">
+<ul class="job_listings">
 
-				<?php
+  <?php
 				while ( $jobs->have_posts() ) :
 					$jobs->the_post();
 					?>
 
-					<?php get_job_manager_template( 'content-widget-job_listing.php', [ 'show_logo' => $show_logo ] ); ?>
+  <?php get_job_manager_template( 'content-widget-job_listing.php', [ 'show_logo' => $show_logo ] ); ?>
 
-				<?php endwhile; ?>
+  <?php endwhile; ?>
 
-			</ul>
+</ul>
 
-			<?php echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+<?php echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 
-		<?php else : ?>
+<?php else : ?>
 
-			<?php get_job_manager_template_part( 'content-widget', 'no-jobs-found' ); ?>
+<?php get_job_manager_template_part( 'content-widget', 'no-jobs-found' ); ?>
 
-			<?php
+<?php
 		endif;
 
 		/**
