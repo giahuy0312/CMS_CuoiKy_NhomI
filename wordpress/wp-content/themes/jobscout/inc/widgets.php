@@ -47,7 +47,12 @@ function jobscout_widgets_init(){
             'name'        => __( 'Footer Four', 'jobscout' ),
             'id'          => 'footer-four', 
             'description' => __( 'Add footer four widgets here.', 'jobscout' ),
-        )
+        ),
+        'header-new'=> array(
+            'name'        => __( 'Header New', 'jobscout' ),
+            'id'          => 'header-new', 
+            'description' => __( 'Add header new widgets here.', 'jobscout' ),
+        ),
     );
     
     foreach( $sidebars as $sidebar ){
