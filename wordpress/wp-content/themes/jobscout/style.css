@@ -1119,7 +1119,6 @@ body.custom-background .site {
 }
 
 a.btn {
-
   display: inline-block;
   background: #ff7f26;
   border: 1px solid #ff7f26;
@@ -1133,7 +1132,6 @@ a.btn:hover,
 a.btn:focus {
   background: none;
   color: #ff7f26;
-
 }
 
 a.btn:focus {
@@ -1213,7 +1211,9 @@ figure.post-thumbnail {
   text-decoration: none;
   display: inline-block;
 }
-
+.col li p {
+  display: inline-block;
+}
 .entry-title a:hover {
   color: #2ace5e;
 }
@@ -2036,12 +2036,11 @@ HEADER T SECTION
   font-weight: 400;
 }
 
-.secondary-nav ul li:hover>a,
-.secondary-nav ul li.current-menu-item>a,
-.secondary-nav ul li.current_page_item>a,
-.secondary-nav ul li.current-menu-ancestor>a,
-.secondary-nav ul li.current_page_ancestor>a {
-  
+.secondary-nav ul li:hover > a,
+.secondary-nav ul li.current-menu-item > a,
+.secondary-nav ul li.current_page_item > a,
+.secondary-nav ul li.current-menu-ancestor > a,
+.secondary-nav ul li.current_page_ancestor > a {
   border-bottom: 4px solid #ff7f26;
 }
 
@@ -2219,12 +2218,11 @@ body.home:not(.banner-enabled) .site-header {
   color: #000;
 }
 
-.main-navigation ul li:hover>a,
-.main-navigation ul li.current-menu-item>a,
-.main-navigation ul li.current_page_item>a,
-.main-navigation ul li.current-menu-ancestor>a,
-.main-navigation ul li.current_page_ancestor>a {
-
+.main-navigation ul li:hover > a,
+.main-navigation ul li.current-menu-item > a,
+.main-navigation ul li.current_page_item > a,
+.main-navigation ul li.current-menu-ancestor > a,
+.main-navigation ul li.current_page_ancestor > a {
   border-bottom: 4px solid #ff7f26;
 }
 
@@ -2355,7 +2353,7 @@ SITE BANNER SECTION
 }
 
 .banner-caption .description p {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .banner-caption .form-wrap {
@@ -2425,8 +2423,6 @@ SITE BANNER SECTION
   padding: 10px 20px;
   color: #666;
 }
-
-
 
 .banner-caption .jobscout_job_filters .search_jobs input::placeholder {
   color: #666 !important;
@@ -2590,7 +2586,7 @@ section.top-job-section .section-title {
 }
 
 .top-job-section .row div.job_listings article:nth-child(2n) {
-  margin-right: 0;
+  margin: 10px 10px;
 }
 
 .top-job-section .row div.job_listings article .company-logo {
@@ -2629,6 +2625,7 @@ section.top-job-section .section-title {
 .top-job-section .row div.job_listings article .entry-title {
   margin-top: 0;
   margin-bottom: 0;
+  text-transform: uppercase;
   padding-right: 30px;
   font-size: 1.1112em;
   line-height: 1.45em;
@@ -2696,10 +2693,23 @@ section.top-job-section .section-title {
   text-transform: uppercase;
   font-weight: 700;
   padding-left: 30px;
-
   display: inline-block;
   border-right-style: solid;
   border-right-width: 1px;
+  border-right-color: rgba(0, 0, 0, 0.322);
+  padding: 5px;
+  color: #000;
+  cursor: default;
+}
+.job-manager li.job-type,
+.job-types li.job-type,
+.job_listing li.job-type::after {
+  list-style: none;
+  font-size: 0.59em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-left: 30px;
+  display: inline-block;
   border-right-color: rgba(0, 0, 0, 0.322);
   padding: 5px;
   color: #000;
@@ -5868,7 +5878,7 @@ JOB LISTING PAGE
   border-radius: 5px;
   padding: 30px;
   position: relative;
-  display: flex;
+
   flex: 1;
   flex-wrap: wrap;
   overflow: hidden;
@@ -6059,10 +6069,6 @@ div.job_listings .load_more_jobs:focus {
   flex-wrap: wrap;
   align-items: flex-start;
 }
-
-
-
-
 
 /* .search_location svg path {
   fill: orangered !important;
@@ -8882,7 +8888,7 @@ RESPONSIVE STYLESHEET
   text-align: left;
   opacity: 0.6;
   font-size: 32px;
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: "Libre Franklin", sans-serif;
 }
 
 .module_banner_des {
@@ -8916,7 +8922,6 @@ RESPONSIVE STYLESHEET
   height: 60px;
   left: calc(50% - 560px);
   top: calc(50% - 30px);
-
 }
 
 .module_search_form {
@@ -8932,7 +8937,7 @@ RESPONSIVE STYLESHEET
 
 .icon_search {
   position: absolute;
-  color: #E67223;
+  color: #e67223;
   width: 30px;
   height: 30px;
   top: calc(50% - 15px);
@@ -8951,7 +8956,7 @@ RESPONSIVE STYLESHEET
 
 .icon_location {
   position: absolute;
-  color: #E67223;
+  color: #e67223;
   width: 30px;
   height: 30px;
   top: calc(50% - 15px);
@@ -8961,19 +8966,15 @@ RESPONSIVE STYLESHEET
 .btn_submit {
   width: 200px !important;
   color: white !important;
-  background-color: #E67223 !important;
+  background-color: #e67223 !important;
   text-indent: 0 !important;
   text-align: center !important;
   background-image: none !important;
 }
 
-/* /Module 1: Search */
-
-/* Module: Footer */
-
 /* Footer A */
 .footer_A {
-  background-color: #E67223;
+  background-color: #e67223;
   height: 200px;
   padding-top: 0 !important;
 }
@@ -9000,7 +9001,7 @@ RESPONSIVE STYLESHEET
   height: 30px;
   top: calc(50% - 15px);
   left: 20px;
-  color: #E67223;
+  color: #e67223;
 }
 
 .input_search_footer {
@@ -9020,48 +9021,6 @@ RESPONSIVE STYLESHEET
   top: calc(50% - 30px);
   font-size: 24px !important;
   border-radius: 0 !important;
-  background: #E67223 !important;
+  background: #e67223 !important;
   border: 2px solid white !important;
 }
-
-/* /Footer A */
-
-/* Footer B */
-.footer_B {
-  height: 400px;
-  text-align: center;
-}
-
-
-.post_binh {
-  background: #fff;
-  height: 150px;
-  /* padding-left: 20px !important; */
-}
-
-.image_postbinh {
-  width: 160px;
-  height: 150px;
-}
-
-.titlebinh {
-  font-size: 14px;
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  text-align: left;
-}
-
-.des-titlebinh {
-  text-align: left;
-  font-size: 10px;
-  padding-top: 10px;
-}
-
-.rm-binh {
-  padding-top: 10px;
-  text-align: left;
-  font-weight: bold;
-  font-size: 12px;
-  color: orange;
-  text-decoration: none;

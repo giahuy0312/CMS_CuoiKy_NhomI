@@ -14,7 +14,7 @@
  */
 
 if (!defined('ABSPATH')) {
-	exit; // Exit if accessed directly.
+  exit; // Exit if accessed directly.
 }
 
 global $post;
@@ -22,10 +22,10 @@ $job_salary   = get_post_meta(get_the_ID(), '_job_salary', true);
 $job_featured = get_post_meta(get_the_ID(), '_featured', true);
 $company_name = get_post_meta(get_the_ID(), '_company_name', true);
 
+
 ?>
 <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-<article <?php job_listing_class(); ?> data-longitude="<?php echo esc_attr($post->geolocation_lat); ?>"
-  data-latitude="<?php echo esc_attr($post->geolocation_long); ?>">
+<article <?php job_listing_class(); ?> data-longitude="<?php echo esc_attr($post->geolocation_lat); ?>" data-latitude="<?php echo esc_attr($post->geolocation_long); ?>">
   <div class="row logo-image">
     <div class="col-4 ">
       <figure class="company-logo">
@@ -40,36 +40,41 @@ $company_name = get_post_meta(get_the_ID(), '_company_name', true);
       <div class="created-post">Created: <?php echo get_post_datetime($post)->format('M d, Y') ?></div>
       <div class="job-posting">
         <?php
-				if (get_option('job_manager_enable_types')) {
-					$types = wpjm_get_the_job_types();
-					if (!empty($types)) : foreach ($types as $jobtype) : ?>
-        <li class="job-type-top-job job-type <?php echo esc_attr(sanitize_title($jobtype->slug)); ?>">
-          <?php echo esc_html($jobtype->name); ?></li>
-        <li class="job-type-top-job job-type category-name">
-          <!-- <?php echo esc_html($jobtype->post->job_listing_category); ?> -->category-name
-        </li>
-        <li style="  border-right-width: none !important;"
-          class="job-type-top-job job-type <?php echo esc_attr(sanitize_title($location = get_the_job_location($post))); ?>">
-          <?php echo esc_html($location = get_the_job_location($post)); ?></li>
+        if (get_option('job_manager_enable_types')) {
+          $types = wpjm_get_the_job_types();
+          if (!empty($types)) : foreach ($types as $jobtype) : ?>
+              <li class="job-type-top-job job-type <?php echo esc_attr(sanitize_title($jobtype->slug)); ?>">
+                <?php echo esc_html($jobtype->name); ?></li>
+              <li class=" job-type-top-job job-type category-name ">
+                <!-- <?php echo esc_html($jobtype->post->job_listing_category); ?> -->category-name
+              </li>
+              <li class="job-type-top-job job-type <?php echo esc_attr(sanitize_title($location = get_the_job_location($post))); ?>">
+                <?php echo esc_html($location = get_the_job_location($post)); ?></li>
         <?php endforeach;
-					endif;
-				}
-				do_action('job_listing_meta_end');
-				?>
+          endif;
+        }
+        do_action('job_listing_meta_end');
+        ?>
       </div>
     </div>
 
   </div>
-  <div class="row job-description1"">
-    <div class=" col">
-    <li>áđâsđá</li>
-    <li>áđâsda</li>
-    <li>sđâsdấdsád</li>
+  <div class="row job-description1">
+    <div class=" col " style="padding-left: revert;">
+      <?php
+      $data['description'] = wpjm_get_the_job_description($post);
+      // Cắt chuỗi mô tả công việc
+      $cut_job_description = substr($data['description'], 300, 39);
+      $cut_job_description2 = substr($data['description'], 200, 41);
+      $cut_job_description3 = substr($data['description'], 400, 50);
+      ?>
+      <li><?php echo $cut_job_description; ?></li>
+      <li><?php echo $cut_job_description2; ?></li>
+      <li><?php echo $cut_job_description3; ?></li>
+    </div>
   </div>
-  </div>
-
   <?php if ($job_featured) { ?>
-  <div class="featured-label"><?php esc_html_e('Featured', 'jobscout'); ?></div>
+    <div class="featured-label"><?php esc_html_e('Featured', 'jobscout'); ?></div>
   <?php } ?>
 
 </article>
