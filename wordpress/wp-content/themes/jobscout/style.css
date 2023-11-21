@@ -2344,13 +2344,14 @@ SITE BANNER SECTION
   text-align: left;
   font-size: 2.5em;
   margin-top: 20px !important;
-
+ 
   color: #fff;
-  font-weight: 800;
+  font-weight: 500;
   line-height: 1.4;
 }
 
 .banner-caption .description {
+  padding-top:  15px;
   text-align: left;
   margin-top: -10px;
   font-size: 1em;
