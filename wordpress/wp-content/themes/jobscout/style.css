@@ -1126,6 +1126,7 @@ a.btn {
   font-weight: 700;
   font-size: 0.888em;
   padding: 10px 18px;
+  border-radius: none !important;
 }
 
 a.btn:hover,
@@ -1212,9 +1213,11 @@ figure.post-thumbnail {
   text-decoration: none;
   display: inline-block;
 }
+
 .col li p {
   display: inline-block;
 }
+
 .entry-title a:hover {
   color: #2ace5e;
 }
@@ -2221,11 +2224,11 @@ body.home:not(.banner-enabled) .site-header {
   color: #000;
 }
 
-.main-navigation ul li:hover > a,
-.main-navigation ul li.current-menu-item > a,
-.main-navigation ul li.current_page_item > a,
-.main-navigation ul li.current-menu-ancestor > a,
-.main-navigation ul li.current_page_ancestor > a {
+.main-navigation ul li:hover>a,
+.main-navigation ul li.current-menu-item>a,
+.main-navigation ul li.current_page_item>a,
+.main-navigation ul li.current-menu-ancestor>a,
+.main-navigation ul li.current_page_ancestor>a {
   border-bottom: 4px solid #ff7f26;
 }
 
@@ -2450,7 +2453,7 @@ SITE BANNER SECTION
   border: none;
   background: #ff7f26;
   text-transform: uppercase;
-  padding: 10px 20px !important;
+  padding: 10px 30px !important;
   color: #fff;
 }
 
@@ -4759,6 +4762,7 @@ WIDGET CALL TO ACTION
   margin: 5px;
   font-size: 0.888em;
   padding: 10px 18px;
+  text-decoration: none;
 
 }
 
