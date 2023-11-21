@@ -2958,11 +2958,13 @@ section.article-section {
 
 .article-section .article-wrap {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
   text-align: left;
-  margin-top: 50px;
+  margin-top: 25px;
   margin-bottom: 40px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .article-section .article-wrap article {
