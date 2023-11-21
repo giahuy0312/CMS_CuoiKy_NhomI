@@ -60,12 +60,12 @@ $company_name = get_post_meta(get_the_ID(), '_company_name', true);
     </div>
 
   </div>
-  <div class="row job-description1"">
-    <div class=" col">
-    <li>áđâsđá</li>
-    <li>áđâsda</li>
-    <li>sđâsdấdsád</li>
-  </div>
+  <div class="row job-description1">
+    <div class=" col " style="padding-left: revert;">
+      <li>áđâsđá</li>
+      <li>áđâsda</li>
+      <li class="description_li_end">sđâsdấdsád</li>
+    </div>
   </div>
 
   <?php if ($job_featured) { ?>

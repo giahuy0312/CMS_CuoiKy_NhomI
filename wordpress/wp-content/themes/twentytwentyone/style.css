@@ -6283,3 +6283,8 @@ footer {
   margin-top: 10px;
   cursor: default;
 }
+.job-manager li.job-type:after,
+.job-types li.job-type:after,
+.job_listing li.job-type:after {
+  content: none;
+}
