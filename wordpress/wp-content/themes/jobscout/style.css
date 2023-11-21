@@ -1211,7 +1211,9 @@ figure.post-thumbnail {
   text-decoration: none;
   display: inline-block;
 }
-
+.col li p {
+  display: inline-block;
+}
 .entry-title a:hover {
   color: #2ace5e;
 }
