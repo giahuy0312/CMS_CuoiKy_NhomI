@@ -14,9 +14,9 @@ $post_slug       = get_post_field('post_name', $find_a_job_link);
 $ed_job_category = get_option('job_manager_enable_categories');
 
 if ($post_slug) {
-  $action_page =  home_url('/' . $post_slug);
+    $action_page =  home_url('/' . $post_slug);
 } else {
-  $action_page =  home_url('/');
+    $action_page =  home_url('/');
 }
 ?>
 
@@ -29,47 +29,46 @@ if ($post_slug) {
                 <div class="search_keywords">
 
                     <i class="fa fa-search icon_search"></i>
-                    <input style="padding-left: 55px;" type="text" id="search_keywords" name="search_keywords"
-                        placeholder="<?php esc_attr_e(' Keywords', 'jobscout'); ?>">
+                    <input style="padding-left: 55px;" type="text" id="search_keywords" name="search_keywords" placeholder="<?php esc_attr_e(' Keywords', 'jobscout'); ?>">
                 </div>
             </div>
 
             <div class="module_location_form">
                 <div class="search_location">
                     <?php
-          global $wpdb;
-          $table = $wpdb->prefix . 'postmeta';
-          $sql = "SELECT DISTINCT SUBSTRING_INDEX(`meta_value`,',',-1) as location FROM `wp_postmeta` WHERE `meta_key` like '%location%' ORDER BY location";
-          $data = $wpdb->get_results($wpdb->prepare($sql));
-          ?>
+                    global $wpdb;
+                    $table = $wpdb->prefix . 'postmeta';
+                    $sql = "SELECT DISTINCT SUBSTRING_INDEX(`meta_value`,',',-1) as location FROM `wp_postmeta` WHERE `meta_key` like '%location%' ORDER BY location";
+                    $data = $wpdb->get_results($wpdb->prepare($sql));
+                    ?>
                     <i class="fa fa-map-marker icon_location"></i>
                     <select id="search_location" name="search_location" value="Khu vực" class="select_locations">
                         <option class="option_locations" value="">Khu vực</option>
                         <?php foreach ($data as $value) : ?>
-                        <option value="<?php echo $value->location; ?>">
-                            <?php echo $value->location; ?>
-                        </option>
+                            <option value="<?php echo $value->location; ?>">
+                                <?php echo $value->location; ?>
+                            </option>
                         <?php endforeach ?>
                     </select>
                 </div>
             </div>
 
             <?php if ($ed_job_category) { ?>
-            <div class="search_categories custom_search_categories">
-                <label for="search_category">
-                    <?php esc_html_e('Job Category', 'jobscout'); ?>
-                </label>
-                <select id="search_category" class="robo-search-category" name="search_category">
-                    <option value="">
-                        <?php _e('Select Job Category', 'jobscout'); ?>
-                    </option>
-                    <?php foreach (get_job_listing_categories() as $jobcat) : ?>
-                    <option value="<?php echo esc_attr($jobcat->term_id); ?>">
-                        <?php echo esc_html($jobcat->name); ?>
-                    </option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
+                <div class="search_categories custom_search_categories">
+                    <label for="search_category">
+                        <?php esc_html_e('Job Category', 'jobscout'); ?>
+                    </label>
+                    <select id="search_category" class="robo-search-category" name="search_category">
+                        <option value="">
+                            <?php _e('Select Job Category', 'jobscout'); ?>
+                        </option>
+                        <?php foreach (get_job_listing_categories() as $jobcat) : ?>
+                            <option value="<?php echo esc_attr($jobcat->term_id); ?>">
+                                <?php echo esc_html($jobcat->name); ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
             <?php } ?>
 
             <div class="search_submit">

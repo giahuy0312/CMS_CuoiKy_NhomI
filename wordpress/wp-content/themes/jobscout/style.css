@@ -2691,10 +2691,23 @@ section.top-job-section .section-title {
   text-transform: uppercase;
   font-weight: 700;
   padding-left: 30px;
-
   display: inline-block;
   border-right-style: solid;
   border-right-width: 1px;
+  border-right-color: rgba(0, 0, 0, 0.322);
+  padding: 5px;
+  color: #000;
+  cursor: default;
+}
+.job-manager li.job-type,
+.job-types li.job-type,
+.job_listing li.job-type::after {
+  list-style: none;
+  font-size: 0.59em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-left: 30px;
+  display: inline-block;
   border-right-color: rgba(0, 0, 0, 0.322);
   padding: 5px;
   color: #000;
@@ -5863,7 +5876,7 @@ JOB LISTING PAGE
   border-radius: 5px;
   padding: 30px;
   position: relative;
-  display: flex;
+
   flex: 1;
   flex-wrap: wrap;
   overflow: hidden;

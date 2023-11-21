@@ -14,7 +14,7 @@
  */
 
 if (!defined('ABSPATH')) {
-	exit; // Exit if accessed directly.
+  exit; // Exit if accessed directly.
 }
 
 global $post;
@@ -40,22 +40,22 @@ $company_name = get_post_meta(get_the_ID(), '_company_name', true);
       <div class="created-post">Created: <?php echo get_post_datetime($post)->format('M d, Y') ?></div>
       <div class="job-posting">
         <?php
-				if (get_option('job_manager_enable_types')) {
-					$types = wpjm_get_the_job_types();
-					if (!empty($types)) : foreach ($types as $jobtype) : ?>
+        if (get_option('job_manager_enable_types')) {
+          $types = wpjm_get_the_job_types();
+          if (!empty($types)) : foreach ($types as $jobtype) : ?>
         <li class="job-type-top-job job-type <?php echo esc_attr(sanitize_title($jobtype->slug)); ?>">
           <?php echo esc_html($jobtype->name); ?></li>
-        <li class="job-type-top-job job-type category-name">
+        <li class=" job-type-top-job job-type category-name ">
           <!-- <?php echo esc_html($jobtype->post->job_listing_category); ?> -->category-name
         </li>
-        <li style="  border-right-width: none !important;"
+        <li
           class="job-type-top-job job-type <?php echo esc_attr(sanitize_title($location = get_the_job_location($post))); ?>">
           <?php echo esc_html($location = get_the_job_location($post)); ?></li>
         <?php endforeach;
-					endif;
-				}
-				do_action('job_listing_meta_end');
-				?>
+          endif;
+        }
+        do_action('job_listing_meta_end');
+        ?>
       </div>
     </div>
 
@@ -64,7 +64,7 @@ $company_name = get_post_meta(get_the_ID(), '_company_name', true);
     <div class=" col " style="padding-left: revert;">
       <li>áđâsđá</li>
       <li>áđâsda</li>
-      <li class="description_li_end">sđâsdấdsád</li>
+      <li>sđâsdấdsád</li>
     </div>
   </div>
 

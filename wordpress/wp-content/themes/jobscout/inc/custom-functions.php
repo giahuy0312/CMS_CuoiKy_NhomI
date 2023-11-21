@@ -482,17 +482,21 @@ function jobscout_admin_notice(){
             return;
         } ?>
 
-        <div class="welcome-message notice notice-info">
-            <div class="notice-wrapper">
-                <div class="notice-text">
-                    <h3><?php esc_html_e( 'Congratulations!', 'jobscout' ); ?></h3>
-                    <p><?php printf( __( '%1$s is now installed and ready to use. Click below to see theme documentation, plugins to install and other details to get started.', 'jobscout' ), esc_html( $name ) ); ?></p>
-                    <p><a href="<?php echo esc_url( admin_url( 'themes.php?page=jobscout-getting-started' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Go to the getting started.', 'jobscout' ); ?></a></p>
-                    <p class="dismiss-link"><strong><a href="?jobscout_admin_notice=1"><?php esc_html_e( 'Dismiss', 'jobscout' ); ?></a></strong></p>
-                </div>
-            </div>
-        </div>
-    <?php }
+<div class="welcome-message notice notice-info">
+  <div class="notice-wrapper">
+    <div class="notice-text">
+      <h3><?php esc_html_e( 'Congratulations!', 'jobscout' ); ?></h3>
+      <p>
+        <?php printf( __( '%1$s is now installed and ready to use. Click below to see theme documentation, plugins to install and other details to get started.', 'jobscout' ), esc_html( $name ) ); ?>
+      </p>
+      <p><a href="<?php echo esc_url( admin_url( 'themes.php?page=jobscout-getting-started' ) ); ?>"
+          class="button button-primary"><?php esc_html_e( 'Go to the getting started.', 'jobscout' ); ?></a></p>
+      <p class="dismiss-link"><strong><a
+            href="?jobscout_admin_notice=1"><?php esc_html_e( 'Dismiss', 'jobscout' ); ?></a></strong></p>
+    </div>
+  </div>
+</div>
+<?php }
 }
 endif;
 add_action( 'admin_notices', 'jobscout_admin_notice' );
